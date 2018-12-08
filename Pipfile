@@ -8,6 +8,9 @@ name = "pypi"
 [packages]
 django = "*"
 python-decouple = "*"
+"psycopg2-binary" = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.5"
