@@ -110,8 +110,8 @@ const CustomForm = withFormik({
         */
         // call api here
         // const url = 'http://127.0.0.1:8000/api/v1/users/create/';
-        const url = 'https://hcradjango.herokuapp.com/api/v1/users/create/'
-        // const url = 'http://hcradjango.herokuapp.com/api/v1/users/create/'
+        const url = 'https://beermeanother.herokuapp.com/api/v1/users/create/'
+        // const url = 'http://beermeanother.herokuapp.com/api/v1/users/create/'
 
         const { history } = props;
 
