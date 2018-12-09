@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['beermeanother.herokuapp.com']
 
 
 # Application definition
@@ -177,7 +177,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 # and have a url
 # localhost:3000/ React's default local port
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8000'
+    'beermeanother.herokuapp.com'
 )
 
 # at the bottom of your file
