@@ -1,4 +1,369 @@
-.App {
+/*
+==============================================
+  guinesss
+
+  #F0F0D8 - lightest
+  #DDDDBA
+  #C9C99B
+  #ACAC79
+  #111106 - darkest
+
+  --primary: #aaa;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(101, 101, 101, 0.8);
+==============================================
+*/
+:root {
+  --primary: #aaa;
+  --dark: #111106; /* #333; */
+  --light: #F0F0D8; /* #fff; */
+  --shadow: 0 1px 5px rgba(101, 101, 101, 0.8);
+}
+
+
+html {
+  box-sizing: border-box;
+  font-family:  Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+
+body {
+  margin: 10px 40px;
+  line-height: 1.4;
+}
+
+img {
+  width: 100%; /* stay within container */
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  background: #f9f9f9;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem; /* 9.6px 20.6px */
+  border: 0;
+  text-decoration: none;
+}
+
+/* FontAwesome */
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo span {
+  font-size: 1.1rem;
+  padding: 0.4rem;
+  font-weight: bold;
+}
+.beer-icon {
+  height: 100%;
+}
+
+.about header {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.about section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about p {
+  text-indent: 2rem;
+}
+
+
+/* tmp */
+.app-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Navigation */
+.main-nav {
+  width: 60%;
+  float: right;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+  list-style: none;
+  padding: 0;
+}
+
+.main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.2rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+
+/* SignUp */
+.sign-up {
+  background: var(--primary); /* lightblue; */
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  min-width: 165px;
+  width: 30%; /*400px;*/
+  margin: auto;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.sign-up > * {
+  margin-top: 5px;
+}
+
+.sign-up button[type=submit] {
+  border-radius: 5%;
+  background: #bfd255; /* Old browsers */
+  background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+  width: 100%;
+  margin: auto;
+/*  margin-top: 5px;*/
+  padding: .5rem;
+}
+
+.policy {
+  font-size: .4rem;
+/*  vertical-align: middle;*/
+  line-height: middle;
+}
+
+.sign-up input::placeholder {
+  text-indent: 5px;
+}
+
+.sign-up button[type=submit]:active {
+  background: #abcdef;
+  background-blend-mode: hard-light;
+}
+
+.sign-up h1 {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+.top-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+/* Showcase */
+.showcase {
+  grid-area: showcase;
+  min-height: 100px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* to its own container */
+  justify-content: center; /* to the showcase container */
+  box-shadow: var(--shadow);
+  background: url(./img/beer.jpeg);
+  background-color: #edb;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: color-burn;
+}
+
+.showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+
+/* Top Box */
+.top-box {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #f9f9f9; /* var(--primary); */
+  box-shadow: var(--shadow);
+  padding: .5rem;
+}
+
+.top-box .price {
+  font-size: 2rem;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: #f9f9f9; /* var(--primary); */
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 1.5rem 2rem;
+}
+
+/* Info */
+.info {
+  background: #f9f9f9; /* var(--primary); */
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+
+.main header {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.main section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0 1.5rem;
+}
+
+.main div {
+  background: #eee;
+}
+
+.main div:nth-child(odd) {
+  background: #ddd;
+}
+
+.main-card--temp {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  box-shadow: var(--shadow);
+}
+
+.main-card--temp img {
+  box-shadow: var(--shadow);
+}
+
+
+
+/* Media Queries */
+@media (max-width: 700px) { /* 700 and below */
+  .top-container {
+    grid-template-areas:
+      'showcase showcase'
+      'top-box-a top-box-b';
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .main-nav {
+    margin: 0 auto;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+}
+
+/**********************************************************
+
+
+
+***********************************************************/
+/*.App {
   text-align: center;
 }
 
@@ -30,3 +395,4 @@
     transform: rotate(360deg);
   }
 }
+*/

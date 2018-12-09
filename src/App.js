@@ -1,7 +1,57 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBeer, faBars, faChartPie, faGlobe, faCog, faUsers} from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+
+import logo from './img/logo.svg';
 import './App.css';
 
+import About from "./components/About";
+import Beers from "./components/Beers";
+import Featured from './components/Featured';
+import Footer from "./components/Footer";
+import CustomForm from './components/Form';
+import Header from './components/Header';
+import Home from "./components/Home";
+import PageNotFound from "./components/PageNotFound";
+
+import UserPage from './components/UserPage';
+import Users from "./components/Users";
+
+
+
+
+
+library.add(faBeer, faBars);
+library.add(faChartPie, faGlobe, faCog, faUsers);
+library.add(fab); {/* faFacebookSquare */}
+
+const App = () => (
+  <BrowserRouter>
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route exact path="/beers" component={Beers} />
+        <Route path="/beers/:name" component={Featured} />
+        <Route path="/SignUp" component={CustomForm} />
+        <Route exact path="/users" component={Users} />
+        <Route path="/users/:name" component={Featured} />
+        <Route path="/user/:name" component={UserPage} />
+        <Route exact path="/" component={Home} />
+        <Route component={PageNotFound} />
+      </Switch>
+      <Footer />
+    </div>
+  </BrowserRouter>
+  );
+
+{/*
 class App extends Component {
   render() {
     return (
@@ -24,5 +74,5 @@ class App extends Component {
     );
   }
 }
-
+*/}
 export default App;
