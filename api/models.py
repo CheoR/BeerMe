@@ -4,7 +4,7 @@ from django.db import models
 
 class Beer(models.Model):
     # django provides implict default id
-    name = models.CharField(max_length=40, unique=True, blank=False, on_delete=models.CASCADE)
+    name = models.CharField(max_length=40, unique=True, blank=False)
 
     class Meta:
         db_table = 'beer_list'
@@ -39,7 +39,7 @@ class CustomUser(AbstractUser):
     # from django.conf import settings and referring to the
     # settings.AUTH_USER_MODEL instead of referring directly to the
     # custom User model.
-    username = models.CharField(max_length=40, unique=True, blank=False, on_delete=models.CASCADE)
+    username = models.CharField(max_length=40, unique=True, blank=False)
     avatar = models.CharField(max_length=255, blank=True, null=True, default=None)
     age = models.IntegerField(blank=True, null=True, default=None)
 

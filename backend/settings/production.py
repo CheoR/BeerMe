@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third-party
+    'rest_framework',
     # own
     # 'api.apps.ApiConfig',
     'api',
@@ -159,6 +160,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # settings.AUTH_USER_MODEL instead of referring directly to the
 # custom User model.
 AUTH_USER_MODEL = "api.CustomUser"
+
+# Will eventually change this in production to only allow
+# authorized users to make POST requests
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 # at the bottom of your file
 # for heroku

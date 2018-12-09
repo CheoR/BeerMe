@@ -11,6 +11,7 @@ python-decouple = "*"
 "psycopg2-binary" = "*"
 dj-database-url = "*"
 whitenoise = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.5"
