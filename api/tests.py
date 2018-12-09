@@ -1,4 +1,8 @@
 from django.test import TestCase
+from django.urls import reverse
+
+from rest_framework import status
+from rest_framework.test import APITestCase
 
 from .models import Beer, CustomUser
 
@@ -18,6 +22,21 @@ class BeerTest(TestCase):
 
         self.assertEqual(beer1.name, self.first_beer)
         self.assertEqual(str(beer2), self.second_beer)
+
+
+# class BeerCreateTest(APITestCase):
+#     def test_create_beer(self):
+#         """
+#         Ensure can create beer.
+#         """
+#         url = reverse('beer-create')
+#         print("url is: {}".format(url))
+#         data = {"name": "Beer1", "version": "v1"}
+
+#         response = self.client.post(url, data, format='json')
+
+#         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+#         self.assertEqual(response.data, status.data)
 
 
 class UserTest(TestCase):
