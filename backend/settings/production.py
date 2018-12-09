@@ -32,12 +32,17 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third-party
+    # own
+    # 'api.apps.ApiConfig',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -148,6 +153,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Troubleshooting the WhiteNoise Storage backend
 # - replace see if propblem persist
 # 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+# create foreign keys to the CustomUser model importing the settings
+# from django.conf import settings and referring to the
+# settings.AUTH_USER_MODEL instead of referring directly to the
+# custom User model.
+AUTH_USER_MODEL = "api.CustomUser"
 
 # at the bottom of your file
 # for heroku
