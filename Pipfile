@@ -12,6 +12,7 @@ python-decouple = "*"
 dj-database-url = "*"
 whitenoise = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.5"

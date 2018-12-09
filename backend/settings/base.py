@@ -41,12 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third-party
     'rest_framework',
+    'corsheaders',
     # own
     # 'api.apps.ApiConfig',
     'api',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -174,6 +176,15 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+# Update in production.py after setting up your Heroku app
+# and have a url
+# localhost:3000/ React's default local port
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000'
+)
 
 print("=" * 20)
 print("Bottome of {}".format(__file__))
