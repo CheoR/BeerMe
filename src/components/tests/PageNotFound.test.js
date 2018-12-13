@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from '../enzyme';
+import { shallow } from '../../enzyme';
 
-import PageNotFound from './PageNotFound';
+import PageNotFound from '../PageNotFound';
 
-describe('Page Not Found page', () => {
+describe('<PageNotFound />', () => {
   it('renders page not found message', () => {
     const component = shallow(<PageNotFound />);
     const title = <h1>Page Not Found</h1>;
