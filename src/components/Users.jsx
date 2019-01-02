@@ -1,47 +1,67 @@
 import React, { Component } from 'react';
 
+import Card from './Card';
 
 class Users extends Component {
   state = {
-    users: []
+    users: [],
+    errorStatus: ''
   }
 
   async componentDidMount() {
     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     // const url = 'http://127.0.0.1:8000/api/v1/users/';
-    const url = 'https://beermeanother.herokuapp.com/api/v1/users/';
-    // const url = 'http://beermeanother.herokuapp.com/api/v1/users/';
+    // const url = 'http://localhost:3000/users';
+    // const url = 'https://beermeanother.herokuapp.com/api/v1/users/';
+    const url = 'http://beermeanother.herokuapp.com/api/v1/users/';
+
     try {
       const res = await fetch(url);
-      const users = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(res.statusText); // will take you to the catch below
+      } else {
+        await res.json()
+          .then(users => {
+            this.setState({
+              users
+            });
+          });
+      }
+      // const users = await res.json();
 
-      this.setState({
-        users
-      });
+      // this.setState({
+      //   users
+      // });
+
     } catch (e) {
-      console.log(e);
+      // res.status(400).send(); llook it up
+      this.setState({
+        errorStatus: e.message || e
+      });
     }
   }
 
-  render() {
+   render() {
+    const { users, errorStatus } = this.state;
+
     return (
       <main className="main">
         <header>
-            <h1>Drunks</h1>
+            <h1>Users</h1>
         </header>
-
-        <section>
-            {this.state.users.map(user => (
-              <div key={user.id} className="main-card--temp">
-                <img src="https://via.placeholder.com/150" alt="user" />
-                <h1>{user.id} - {user.username}</h1>
-                <span>{user.username}</span>
-              </div>
-            ))}
-          </section>
+        { errorStatus
+          ? (<section>{ errorStatus }</section>)
+          : (<section>
+              { users.map(user => (
+                  <Card key={user.id} obj={user} />
+              ))}
+            </section>)
+        }
 
       </main>
     );
   }
 }
+
 export default Users;

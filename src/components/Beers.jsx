@@ -1,48 +1,65 @@
 import React, { Component } from 'react';
 
+import Card from './Card';
 
 class Beers extends Component {
   state = {
-    beers: []
+    beers: [],
+    errorStatus: ''
   }
 
   async componentDidMount() {
     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    // const url = 'http://127.0.0.1:8000/api/v1/beers/';
-    const url = 'https://beermeanother.herokuapp.com/api/v1/beers/';
-    // const url = 'http://beermeanother.herokuapp.com/api/v1/beers/';
+    // const url = 'http://localhost:3000/beers';
+    const url = 'http://beermeanother.herokuapp.com/api/v1/beers/';
+
     try {
       const res = await fetch(url);
-      const beers = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(res.statusText); // will take you to the catch below
+      } else {
+        await res.json()
+          .then(beers => {
+            this.setState({
+              beers
+            });
+          });
+      }
+      // const beers = await res.json();
 
-      this.setState({
-        beers
-      });
+      // this.setState({
+      //   beers
+      // });
+
     } catch (e) {
-      console.log(e);
       // res.status(400).send(); llook it up
+      this.setState({
+        errorStatus: e.message || e
+      });
     }
   }
 
-  render() {
+   render() {
+    const { beers, errorStatus } = this.state;
+
     return (
       <main className="main">
         <header>
             <h1>Beers</h1>
         </header>
-
-        <section>
-            {this.state.beers.map(beer => (
-              <div key={beer.id} className="main-card--temp">
-                <img src="https://via.placeholder.com/150" alt="beer" />
-                <h2>{beer.id} - {beer.name}</h2>
-                <span>{beer.name}</span>
-              </div>
-            ))}
-          </section>
+        { errorStatus
+          ? ( <section>{ errorStatus }</section>)
+          : (<section>
+              { beers.map(beer => (
+                  <Card key={beer.id} obj={beer} />
+              ))}
+            </section>)
+        }
 
       </main>
     );
   }
 }
+
 export default Beers;
