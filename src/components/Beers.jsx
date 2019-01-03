@@ -11,7 +11,7 @@ class Beers extends Component {
   async componentDidMount() {
     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     // const url = 'http://localhost:3000/beers';
-    const url = 'http://beermeanother.herokuapp.com/api/v1/beers/';
+    const url = 'https://beermeanother.herokuapp.com/api/v1/beers/';
 
     try {
       const res = await fetch(url);

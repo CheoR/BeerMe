@@ -100,6 +100,7 @@ const CustomForm = withFormik({
             .required('Password Required'),
         confirm_password: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
+            .required('Comfirmation required')
     }), // validationSchema
     handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
         /*
