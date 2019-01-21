@@ -6,7 +6,7 @@ import Portfolio from './Portfolio';
 import ShowCase from './ShowCase';
 
 const Home = () => (
-    <div className="container">
+    <div className="page-home">
         <ShowCase />
         <Boxes />
         <Info />

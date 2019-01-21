@@ -2,7 +2,7 @@ import React from 'react';
 
 const ShowCase = () => (
     <section className="top-container">
-      <header className="showcase">
+      <header className="showCase">
         <h1>Beer</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ipsam! Nihil quo minima nulla atque!</p>
         <a href="#" className="btn">Read More</a>

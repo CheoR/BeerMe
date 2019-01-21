@@ -1,0 +1,195 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  overflow-wrap: break-word;
+}
+
+.App {
+  width: 95%;
+  margin: 0 auto;
+  // background: lightblue;
+  font-family:  Arial, Helvetica, sans-serif;
+}
+
+
+.btn {
+  color: white;
+  padding: .5rem;
+  border: 0;
+  text-decoration: none;
+  background: black;
+  margin-top: .5rem;
+}
+
+
+
+
+/* Navigation */
+.main-nav {
+  width: 100%;
+  background: blue;
+  // float: right;
+  a {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  ul {
+    background: red;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+  }
+
+  li {
+    background: grey;
+    width: 100%;
+    text-align: center;
+    border: 1px dotted white;
+    padding: .3rem;
+    cursor: pointer;
+  }
+}
+
+
+/* HEADER */
+.header {
+  // display: flex;
+  // flex-direction: column;
+  background: yellow;
+  align-items: center;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+
+  p { margin-top: .5rem; }
+}
+
+
+
+/****
+
+  HOME PAGE
+
+****/
+
+.page-home {
+  // background: pink;
+  display: grid;
+  grid-gap: 5px;
+}
+
+
+/*  SHOWCASE */
+.top-container {
+  // background: red;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  & .showCase {
+    background: blue;
+    background: url(./img/beer.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color-burn;
+    align-items: flex-start; /* to its own container */
+    justify-content: center; /* to the showcase container */
+    padding: 1rem;
+    box-shadow: 0 1px 5px;
+
+    & h1 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    & p {
+      font-size: .5rem;
+      color: white;
+    }
+
+  }
+
+  & .top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background: #f9f9f9; /* var(--primary); */
+    border: 1px dotted black;
+    box-shadow: 0 1px 5px;
+
+    & .price {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/* BOXES */
+.boxes {
+  background: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & .box {
+    border: 1px dotted black;
+    padding: 1rem;
+    box-shadow: 0 1px 5px;
+  }
+
+  & h3 {
+    margin-top: 1rem;
+  }
+  
+  & p {
+    margin-top: .5rem;
+  }
+}
+
+
+/* INFO */
+.info {
+  background: #f9f9f9;
+  box-shadow: 0 1px 5px;
+  padding: 1rem;
+  background: pink;
+  h2 {
+    margin-bottom: .5rem;
+  }
+  text-align: center;
+
+}
+
+/* PORTFOLIO */
+
+img {
+  width: 100%;
+}
+
+.logo,
+img {
+  display: none;
+}
+
+.portfolio {
+  // background: red;
+  /*
+    Maybe add different blend modes to each picture and again on hover?
+  */
+  img {
+    box-shadow: 0 1px 5px;
+  }
+}

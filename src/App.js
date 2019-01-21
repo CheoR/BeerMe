@@ -9,7 +9,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 import logo from './img/logo.svg';
-import './App.css';
+import './App.scss';
 
 import About from "./components/About";
 import Beers from "./components/Beers";
