@@ -32,23 +32,36 @@ const FormikForm = ({
     isSubmitting
 }) => (
     
-    <Form className="sign-up">
+    <Form className="sign-up-form">
         <h1>Stop Drinking Alone</h1>
         <React.Fragment>
             { touched.username && errors.username && <p>{errors.username}</p>}
-            <Field type="text" name="username" placeholder="Username" style={{borderColor: touched.username && errors.username && "red"}} />
+            <label for="username">
+                Username:
+            </label>
+            <Field className="input-field" type="text" name="username" placeholder="Username" style={{borderColor: touched.username && errors.username && "red"}} />
         </React.Fragment>
         <React.Fragment>
             { touched.email && errors.email && <p>{errors.email}</p>}
-            <Field type="email" name="email" placeholder="Email" style={{borderColor: touched.email && errors.email && "red"}} />
+            <label for="email">
+                Email:
+            </label>
+            <Field className="input-field" type="email" name="email" placeholder="Email" style={{borderColor: touched.email && errors.email && "red"}} />
         </React.Fragment>
          <React.Fragment>
             { touched.password && errors.password && <p>{errors.password}</p>}
-            <Field type="password" name="password" placeholder="Password" style={{borderColor: touched.password && errors.password && "red"}} />
+            <label for="password">
+                Password:
+            </label>
+            <Field className="input-field" type="password" name="password" placeholder="Password" style={{borderColor: touched.password && errors.password && "red"}} />
         </React.Fragment>
          <React.Fragment>
             { touched.confirm_password && errors.confirm_password && <p>{errors.confirm_password}</p>}
-            <Field type="password" name="confirm_password" placeholder="Confirm Password" style={{borderColor: touched.confirm_password && errors.confirm_password && "red"}} />
+            <label for="comfirm_password">
+                Confirm Password:
+            </label>
+            <Field className="input-field" type="password" name="confirm_password" placeholder="Confirm Password" style={{borderColor: touched.confirm_password && errors.confirm_password && "red"}} />
+            
         </React.Fragment>
 {/*        <label htmlForm="newsletter">
             <Field type="checkbox" name="newsletter" checked={values.newsletter} />
@@ -60,8 +73,9 @@ const FormikForm = ({
         </Field>
 */}
         <label htmlFor="policy">
-            
-            <span className="policy"><Field type="checkbox" name="policy" checked={values.policy} /> I accept the Terms of Use & Privacy Policy.</span>
+            <span className="policy">
+                <Field type="checkbox" name="policy" checked={values.policy} /> I accept the Terms of Use & Privacy Policy.
+            </span>
         </label>
         
         <button type="submit" disabled={isSubmitting}>Submit</button>

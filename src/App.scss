@@ -7,142 +7,108 @@
   overflow-wrap: break-word;
 }
 
+// *,*::before,*::after {
+//   border: 1px solid red;
+// }
+
 .App {
-  width: 95%;
-  margin: 0 auto;
-  // background: lightblue;
+  background: lightblue;
   font-family:  Arial, Helvetica, sans-serif;
-}
-
-
-.btn {
-  color: white;
-  padding: .5rem;
-  border: 0;
-  text-decoration: none;
-  background: black;
-  margin-top: .5rem;
-}
-
-
-
-
-/* Navigation */
-.main-nav {
-  width: 100%;
-  background: blue;
-  // float: right;
-  a {
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  ul {
-    background: red;
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-  }
-
-  li {
-    background: grey;
-    width: 100%;
-    text-align: center;
-    border: 1px dotted white;
-    padding: .3rem;
-    cursor: pointer;
-  }
-}
-
-
-/* HEADER */
-.header {
-  // display: flex;
-  // flex-direction: column;
-  background: yellow;
-  align-items: center;
-}
-
-/* FOOTER */
-.footer {
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-
-  p { margin-top: .5rem; }
-}
-
-
-
-/****
-
-  HOME PAGE
-
-****/
-
-.page-home {
-  // background: pink;
-  display: grid;
-  grid-gap: 5px;
-}
-
-
-/*  SHOWCASE */
-.top-container {
-  // background: red;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
 
+
+// HEADER
+
+.logo {
+  display: flex;
   justify-content: space-around;
 
-  & .showCase {
-    background: blue;
-    background: url(./img/beer.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: color-burn;
-    align-items: flex-start; /* to its own container */
-    justify-content: center; /* to the showcase container */
-    padding: 1rem;
-    box-shadow: 0 1px 5px;
+  span { font-size: 64px; }
+}
 
-    & h1 {
-      font-size: 2rem;
-      color: white;
-    }
-
-    & p {
-      font-size: .5rem;
-      color: white;
-    }
-
-  }
-
-  & .top-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5rem;
-    background: #f9f9f9; /* var(--primary); */
-    border: 1px dotted black;
-    box-shadow: 0 1px 5px;
-
-    & .price {
-      font-size: 1.8rem;
-    }
+.main-nav {
+  li {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
+
+
+// FOOTER
+footer {
+  text-align: center;
+  margin-top: auto;
+
+  a { 
+    display: inline-block;
+    padding: 10px;
+  }
+}
+
+
+// HOME
+.showCase{
+  color: white;
+  padding: 1em;
+
+  background: url('./img/beer.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: #EDB;
+  // mix-blend-mode: color-burn;
+  background-blend-mode: color-burn;
+
+  .btn {
+    display: block;
+    margin-top: 10px;
+    color: white;
+  }
+}
+
+.top-box {
+  padding: .5em;
+  text-align: center;
+  background: #f9f9f9;
+  border: 1px dotted black;
+  box-shadow: 0 1px 5px;
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  p {
+    display: block;
+    width: 50%;
+    margin: auto;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+
+  .btn {
+    background: black;
+    display: block;
+    margin-top: 10px;
+    color: white;
+    padding: .4em;
+    width: 40%;
+    margin: auto;
+    margin-top: 1em;
+  }
+}
+
 
 /* BOXES */
 .boxes {
   background: #f9f9f9;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   & .box {
     border: 1px dotted black;
@@ -160,36 +126,129 @@
 }
 
 
-/* INFO */
-.info {
-  background: #f9f9f9;
-  box-shadow: 0 1px 5px;
-  padding: 1rem;
-  background: pink;
-  h2 {
-    margin-bottom: .5rem;
+// ABOUT
+.about {
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
   }
+
+  p {
+    text-indent: 10%;
+    margin-top: 5px;
+    padding: 5%;
+  }
+}
+
+
+// INFO
+.info {
+  margin-top: 10px;
+  background: green;
   text-align: center;
 
-}
-
-/* PORTFOLIO */
-
-img {
-  width: 100%;
-}
-
-.logo,
-img {
-  display: none;
-}
-
-.portfolio {
-  // background: red;
-  /*
-    Maybe add different blend modes to each picture and again on hover?
-  */
   img {
+    width: 100%;
+  }
+
+  p {
+    text-align: left;
+    text-indent: 10%;
+    padding: 5%;
+  }
+
+  .btn {
+    background: black;
+    display: block;
+    color: white;
+    padding: .4em;
+    width: 40%;
+    margin: .5em auto;
+  }
+}
+
+
+// PORTFOLIO
+.portfolio {
+
+  background: blue;
+// Maybe add different blend modes to each picture and again on hover?
+
+  img {
+    width: 100%;
     box-shadow: 0 1px 5px;
+  }
+}
+
+
+// BEERS
+
+.main {
+  h1 {
+    text-align: center;
+  }
+}
+
+.main-error { 
+  background: red;
+  font-size: 64px;
+  text-align: center;
+  padding: 10px;
+}
+
+.card {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+
+  box-shadow: 0 1px 5px;
+
+  margin-bottom: 1em;
+
+  img,
+  h2,
+  span {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 60%;
+    box-shadow: 0 1px 5px;
+  }
+}
+
+
+
+
+// FORM
+.sign-up-form {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+
+  label {
+    display: block;
+
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .input-field {
+    width: 100%;
+    padding: 2px;
+  }
+  button {
+    margin-top: auto;
+    padding: 10px;
+    width: 100%;
+    text-transform: uppercase;
   }
 }
