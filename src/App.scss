@@ -11,6 +11,7 @@
 /*
   TODO:
   1. Push HEADER to top; FOOTER to bottom; components take up all the space in between.
+  2. Card contents display at inconsisten heights. Especially at 500px <
 */
 
 // COLORS
@@ -68,7 +69,7 @@ button,
   display:         flex;
   flex-direction:  column;
   justify-content: space-between;
-  overflow: scroll;
+  overflow:        scroll;
 }
 
 .header {
@@ -160,6 +161,14 @@ button,
   padding:      .4em;
 }
 
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
 
 // BOXES
 .boxes {
@@ -173,6 +182,14 @@ button,
   text-align: center;
   padding:    $default-padding;
   box-shadow: $default-shadow;
+
+  h3 {
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
 }
 
 
@@ -183,8 +200,11 @@ button,
 
   background: $default-light;
   box-shadow: $default-shadow;
-
   padding:    $default-padding;
+
+  img {
+    box-shadow: 0px 3px 3px 2px $default-primary;
+  }
 }
 
 // PORTFOLIO
@@ -194,7 +214,7 @@ button,
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   img {
-    box-shadow: 0px 1px 2px 2px $default-primary;
+    box-shadow: 0px 2px 2px 2px $default-primary;
   }
 }
 
@@ -205,7 +225,8 @@ button,
   box-shadow:   $default-shadow;
 
   header {
-    text-align: center;
+    text-align:     center;
+    text-transform: uppercase;
   }
 
   p {
@@ -273,7 +294,7 @@ button,
   }
 
   h1 {
-    background: $default-light;
+    background: darken($default-light, 15);
     box-shadow: $default-shadow;
     padding:   .5em;
     text-align: center;
@@ -285,6 +306,51 @@ button,
 }
 
 
-
 // *,*::before,*::after { border: 1px solid red; }
 // MEDIA QUERIES
+// $between-500-and-700: 500px;
+// $between-700-and-up:  700px;
+
+@media only screen and (min-width: $between-500-and-700) {
+  .App {
+    // background: blue;
+    width: 95%;
+    margin: auto;
+  }
+
+  .header__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-box {
+    grid-gap: 2em;
+    padding: 2em 0;
+
+    .price {
+      font-size: 2em;
+    }
+  }
+
+  .box {
+    padding: 1.5rem 2rem;
+  }
+
+  .sign-up-form {
+    width: 80%;
+    max-width: 700px;
+  }
+
+  .main section {
+    // grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: .2em;
+  }
+
+  .card {
+    width: 90%;
+    height: 400px;
+    padding: .5em .5em 2em .5em;
+  }
+}
