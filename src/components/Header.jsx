@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => (
     <header className='header'>
-        <div className="logo">
+        <div className="header__logo">
             <span>BeerMe</span>
             <FontAwesomeIcon className='beer-icon' icon={'beer'} size="5x" />
         </div>
-        <nav className='main-nav'>
+        <nav className='header__nav'>
             <ul>
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>

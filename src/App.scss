@@ -1,254 +1,290 @@
 *, *::before, *::after {
   padding: 0;
   margin: 0;
+  border: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   overflow-wrap: break-word;
 }
 
-// *,*::before,*::after {
-//   border: 1px solid red;
-// }
+/*
+  TODO:
+  1. Push HEADER to top; FOOTER to bottom; components take up all the space in between.
+*/
 
+// COLORS
+$default-primary:          #BBBBBB;
+$default-background-color: #F9F9F9;
+$default-dark:             #A25151;
+$default-light:            #fcfcfc;
+  // --primary: #aaa;
+  // --dark: #333;
+  // --light: #fff;
+$default-shadow: 0 1px 5px rgba(101, 101, 101, 0.8);
+
+// FONT STUFF
+$default-font-size:   20px;
+$default-line-height: 1.4;
+
+
+// SURROUNDINGS
+$default-padding: 0.4em .9em;  // 8px 18px
+$default-margin:  1.6em;  // 32px
+
+
+// IMAGES
+$default-img-width: 100%;
+
+
+// MEDIA QUERIES
+$between-500-and-700: 500px;
+$between-700-and-up:  700px;
+
+
+body {
+  background:  $default-background-color;
+  font-size:   $default-font-size;
+  line-height: $default-line-height;
+}
+
+img {
+  width: $default-img-width;
+}
+
+button,
+.btn {
+  background: $default-dark;
+  color:      $default-light;
+  padding:    $default-padding;
+  margin:     auto;
+}
+
+
+// APP
 .App {
-  background: lightblue;
-  font-family:  Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: auto;
+  width:           100%;
+  height:          100vh;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  overflow: scroll;
 }
 
-
-// HEADER
-
-.logo {
-  display: flex;
-  justify-content: space-around;
-
-  span { font-size: 64px; }
-}
-
-.main-nav {
-  li {
-    border: 1px solid black;
-    padding: 5px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 16px;
+.header {
+  span {
+    font-size:   3.2em; // 64px;
     font-weight: bold;
   }
+
+  .beer-icon {
+    font-size: 3em; // 60px
+  }
+
+  &__nav {
+    text-align:     center;
+    text-transform: uppercase;
+    li {
+      padding: $default-padding;
+      border-bottom: .05em solid black;  // 1px
+
+      &:first-child {
+        border-top: .1em solid black; // 2px
+      }
+    }
+  }
 }
 
-
-// FOOTER
-footer {
+.footer {
+  background: $default-dark;
+  margin-top: 1.6em;  // 32px
   text-align: center;
-  margin-top: auto;
-
-  a { 
+  a {
     display: inline-block;
-    padding: 10px;
+    color:   $default-primary;
+    padding: .33em;  // ~5.28px
   }
 }
 
 
-// HOME
-.showCase{
-  color: white;
-  padding: 1em;
+// PAGENOTFOUND
+// ERROR
+.main-error,
+.not-found {
+  margin:     auto;
+  font-size:  2em;
+  box-shadow: $default-shadow;
+  background: rgba($default-primary, .5);
+}
 
-  background: url('./img/beer.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-color: #EDB;
-  // mix-blend-mode: color-burn;
-  background-blend-mode: color-burn;
 
-  .btn {
-    display: block;
-    margin-top: 10px;
-    color: white;
-  }
+// HOME PAGE
+.page-home {
+  display:   grid;
+  grid-gap: .5em; // 10px
+}
+
+.top-container {
+  display:   grid;
+  grid-gap: .5em;
+  grid-template-areas:
+    'showCase'
+    'top-box-a'
+    'top-box-b';
+}
+
+.showCase {
+
+  grid-area:             showCase;
+  display:               flex;
+  flex-direction:        column;
+
+  min-height:            5em; // 100px;
+  padding:               1em;
+
+  background:            url(./img/beer.jpeg);
+  background-size:       cover;
+  background-position:   center;
+
+  background-color:      rgba($default-light, .7);
+  background-blend-mode: difference;
+  color:                 saturate($default-dark, 50);
 }
 
 .top-box {
-  padding: .5em;
-  text-align: center;
-  background: #f9f9f9;
-  border: 1px dotted black;
-  box-shadow: 0 1px 5px;
-
-  h4 {
-    font-size: 1.5em;
-  }
-
-  p {
-    display: block;
-    width: 50%;
-    margin: auto;
-    font-size: 2em;
-    margin-top: 1em;
-  }
-
-  .btn {
-    background: black;
-    display: block;
-    margin-top: 10px;
-    color: white;
-    padding: .4em;
-    width: 40%;
-    margin: auto;
-    margin-top: 1em;
-  }
+  display:       grid;
+  align-items:   center;
+  justify-items: center;
+  background:    $default-background-color;
+  box-shadow:    $default-shadow;
+  padding:      .4em;
 }
 
 
-/* BOXES */
+// BOXES
 .boxes {
-  background: #f9f9f9;
-  text-align: center;
-
-  & .box {
-    border: 1px dotted black;
-    padding: 1rem;
-    box-shadow: 0 1px 5px;
-  }
-
-  & h3 {
-    margin-top: 1rem;
-  }
-  
-  & p {
-    margin-top: .5rem;
-  }
+  display:               grid;
+  grid-gap:             .5em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-
-// ABOUT
-.about {
-  h1 {
-    text-align: center;
-    font-size: 32px;
-    text-transform: uppercase;
-  }
-
-  p {
-    text-indent: 10%;
-    margin-top: 5px;
-    padding: 5%;
-  }
+.box {
+  background: $default-light;
+  text-align: center;
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
 }
 
 
 // INFO
 .info {
-  margin-top: 10px;
-  background: green;
-  text-align: center;
+  display:    grid;
+  grid-gap:   1.5em;  // 30px
 
-  img {
-    width: 100%;
-  }
+  background: $default-light;
+  box-shadow: $default-shadow;
 
-  p {
-    text-align: left;
-    text-indent: 10%;
-    padding: 5%;
-  }
-
-  .btn {
-    background: black;
-    display: block;
-    color: white;
-    padding: .4em;
-    width: 40%;
-    margin: .5em auto;
-  }
+  padding:    $default-padding;
 }
-
 
 // PORTFOLIO
 .portfolio {
-
-  background: blue;
-// Maybe add different blend modes to each picture and again on hover?
+  display:               grid;
+  grid-gap:              1em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   img {
-    width: 100%;
-    box-shadow: 0 1px 5px;
+    box-shadow: 0px 1px 2px 2px $default-primary;
   }
 }
 
 
-// BEERS
+// ABOUT PAGE
+.about {
+  padding:      $default-padding;
+  box-shadow:   $default-shadow;
 
+  header {
+    text-align: center;
+  }
+
+  p {
+    text-indent:   10%;
+    margin-bottom: 1em;
+  }
+}
+
+
+// BEERS PAGE
+// USERS PAGE
 .main {
+  text-align: center;
+
+  header {
+    text-transform: uppercase;
+  }
+
+  section {
+    display:  grid;
+    grid-gap: 1em;
+  }
+}
+
+.card {
+  width:           90%;
+  margin:          auto;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-around;
+  box-shadow:      $default-shadow;
+  padding:        .5em;
+
+  &:nth-child(odd) {
+    background: $default-primary;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  img {
+    width:      80%;
+    margin:     auto;
+    box-shadow: $default-shadow;
+  }
+}
+
+
+// SIGN-UP PAGE
+.sign-up-form {
+  background: $default-primary;
+  width:      90%;
+  margin:     auto;
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
+  display:    grid;
+  
+  label,
+  .input-field {
+    width:   90%;
+    margin:  auto;
+    display: block;
+  }
+
+  .input-field {
+    box-shadow: $default-shadow;
+  }
+
   h1 {
+    background: $default-light;
+    box-shadow: $default-shadow;
+    padding:   .5em;
     text-align: center;
   }
 }
 
-.main-error { 
-  background: red;
-  font-size: 64px;
-  text-align: center;
-  padding: 10px;
-}
-
-.card {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-wrap: break-word;
-
-  box-shadow: 0 1px 5px;
-
-  margin-bottom: 1em;
-
-  img,
-  h2,
-  span {
-    margin: auto;
-    margin-bottom: 10px;
-  }
-
-  img {
-    width: 60%;
-    box-shadow: 0 1px 5px;
-  }
+.policy {
+  font-size: .5em;
 }
 
 
 
-
-// FORM
-.sign-up-form {
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  text-align: center;
-
-  label {
-    display: block;
-
-    text-align: left;
-    width: 100%;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .input-field {
-    width: 100%;
-    padding: 2px;
-  }
-  button {
-    margin-top: auto;
-    padding: 10px;
-    width: 100%;
-    text-transform: uppercase;
-  }
-}
+// *,*::before,*::after { border: 1px solid red; }
+// MEDIA QUERIES
