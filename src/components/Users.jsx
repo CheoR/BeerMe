@@ -11,8 +11,8 @@ class Users extends Component {
   async componentDidMount() {
     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     // const url = 'http://127.0.0.1:8000/api/v1/users/';
-    const url = 'http://localhost:3001/users';
-    //const url = 'https://beermeanother.herokuapp.com/api/v1/users/';
+    // const url = 'http://localhost:3001/users';
+    const url = 'https://beermeanother.herokuapp.com/api/v1/users/';
 
     try {
       const res = await fetch(url);

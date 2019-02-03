@@ -12,6 +12,8 @@
   TODO:
   1. Push HEADER to top; FOOTER to bottom; components take up all the space in between.
   2. Card contents display at inconsisten heights. Especially at 500px <
+  3. Overflow scroll bar at every size :( . Hide.
+  4. Nav li items text don't change color on hover. 
 */
 
 // COLORS
@@ -184,11 +186,11 @@ button,
   box-shadow: $default-shadow;
 
   h3 {
-    margin-top: 1rem;
+    margin-top: 1em;
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 1em;
   }
 }
 
@@ -204,6 +206,22 @@ button,
 
   img {
     box-shadow: 0px 3px 3px 2px $default-primary;
+  }
+
+  .info__container {
+    display:        flex;
+    flex-direction: column;
+    box-shadow:     $default-shadow;
+    padding:        $default-padding;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-indent: 10%;
+    padding:     1em;
   }
 }
 
@@ -306,27 +324,41 @@ button,
 }
 
 
-// *,*::before,*::after { border: 1px solid red; }
-// MEDIA QUERIES
-// $between-500-and-700: 500px;
-// $between-700-and-up:  700px;
+// USER PAGE
+.page-user,
+.page-featured {
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
+  margin:     auto;
 
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    text-indent: 10%;
+    margin-top:  1em;
+  }
+} 
+
+
+
+// MEDIA QUERIES
 @media only screen and (min-width: $between-500-and-700) {
   .App {
-    // background: blue;
-    width: 95%;
+    width:  95%;
     margin: auto;
   }
 
   .header__logo {
-    display: flex;
+    display:         flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:     center;
   }
 
   .top-box {
     grid-gap: 2em;
-    padding: 2em 0;
+    padding:  2em 0;
 
     .price {
       font-size: 2em;
@@ -338,19 +370,81 @@ button,
   }
 
   .sign-up-form {
-    width: 80%;
+    width:     80%;
     max-width: 700px;
   }
 
   .main section {
     // grid-template-columns: repeat(1, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: .2em;
+    grid-gap:             .2em;
   }
 
   .card {
-    width: 90%;
-    height: 400px;
+    width:    90%;
+    height:   400px;
     padding: .5em .5em 2em .5em;
+  }
+
+  .page-user,
+  .page-featured {
+    width:   80%;
+    padding: 1em;
+  }
+}
+
+
+// *,*::before,*::after { border: 1px solid red; }
+@media only screen and (min-width: $between-700-and-up) {
+
+  .App {
+    width: 80%;
+  }
+
+  .header__nav {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      border-bottom: initial;
+      border-right: .2em solid black;
+    
+      &:first-child {
+        border-top: initial;
+      }
+
+      &:last-child {
+        border-right: initial;
+      }
+
+      &:hover {
+        background: $default-primary;
+      }
+    }
+  }
+
+  .top-container {
+    grid-template-areas:
+      'showCase showCase top-box-a'
+      'showCase showCase top-box-b';
+  }
+
+  .showCase .btn {
+      margin-bottom: 1em;
+  }
+
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+    padding:               2em;
+  }
+
+  .page-user,
+  .page-featured {
+    padding: 3em;
   }
 }
