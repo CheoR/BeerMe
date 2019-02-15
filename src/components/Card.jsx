@@ -7,8 +7,10 @@ const Card = ({ obj }) => {
   return (
     <div className="card">
       <img src="https://via.placeholder.com/150" alt={ name } />
-      <h2>{ id } - { name }</h2>
-      <span>{ name }</span>
+      <div className="card__content">
+        <h2>{ id } - { name }</h2>
+        <span>{ name }</span>
+      </div>
     </div>
   );
 }

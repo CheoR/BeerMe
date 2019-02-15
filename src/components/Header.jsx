@@ -12,11 +12,11 @@ const Header = () => (
         </div>
         <nav className='header__nav'>
             <ul>
-                <li><NavLink exact to="/">Home</NavLink></li>
-                <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/beers">Beers</NavLink></li>
-                <li><NavLink to="/users">Users</NavLink></li>
-                <li><NavLink to="/SignUp">Sign Up</NavLink></li>
+                <li><NavLink className="nav-link" exact to="/">Home</NavLink></li>
+                <li><NavLink className="nav-link" to="/about">About</NavLink></li>
+                <li><NavLink className="nav-link" to="/beers">Beers</NavLink></li>
+                <li><NavLink className="nav-link" to="/users">Users</NavLink></li>
+                <li><NavLink className="nav-link" to="/SignUp">Sign Up</NavLink></li>
             </ul>
         </nav>
     </header>

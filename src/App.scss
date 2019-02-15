@@ -9,11 +9,10 @@
 }
 
 /*
-  TODO:
-  1. Push HEADER to top; FOOTER to bottom; components take up all the space in between.
-  2. Card contents display at inconsisten heights. Especially at 500px <
-  3. Overflow scroll bar at every size :( . Hide.
-  4. Nav li items text don't change color on hover. 
+  TODO: 
+  8. Refactor.
+  9. Modularize.
+  10. Beers/users pages cards look at differnt heights because of shading.
 */
 
 // COLORS
@@ -71,7 +70,6 @@ button,
   display:         flex;
   flex-direction:  column;
   justify-content: space-between;
-  overflow:        scroll;
 }
 
 .header {
@@ -93,6 +91,15 @@ button,
 
       &:first-child {
         border-top: .1em solid black; // 2px
+      }
+    }
+
+    .nav-link {
+      width: 100%;
+      display: inline-block;
+
+      &:hover {
+        font-weight: bold;
       }
     }
   }
@@ -271,10 +278,11 @@ button,
 
 .card {
   width:           90%;
+  height: 350px;
   margin:          auto;
   display:         flex;
   flex-direction:  column;
-  justify-content: space-around;
+  justify-content: space-between;
   box-shadow:      $default-shadow;
   padding:        .5em;
 
@@ -287,6 +295,10 @@ button,
     width:      80%;
     margin:     auto;
     box-shadow: $default-shadow;
+  }
+
+  &__content {
+    font-size: 80%;
   }
 }
 
@@ -376,13 +388,12 @@ button,
 
   .main section {
     // grid-template-columns: repeat(1, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap:             .2em;
   }
 
   .card {
     width:    90%;
-    height:   400px;
     padding: .5em .5em 2em .5em;
   }
 
