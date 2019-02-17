@@ -11,21 +11,17 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import logo from './img/logo.svg';
 import './App.scss';
 
-import About        from "./components/About";
-import Beers        from "./components/Beers";
-import Featured     from './components/Featured';
-import Footer       from "./components/Footer";
-import CustomForm   from './components/Form';
-import Header       from './components/Header';
-import Home         from "./components/Home";
-import PageNotFound from "./components/PageNotFound";
+import About        from "./components/About/About";
+import Beers        from "./components/Beers/Beers";
+import Featured     from './components/Featured/Featured';
+import Footer       from "./components/Footer/Footer";
+import CustomForm   from './components/Form/Form';
+import Header       from './components/Header/Header';
+import Home         from "./components/Home/Home";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
-import UserPage     from './components/UserPage';
-import Users        from "./components/Users";
-
-
-
-
+import UserPage     from './components/UserPage/UserPage';
+import Users        from "./components/Users/Users";
 
 library.add(faBeer, faBars);
 library.add(faChartPie, faGlobe, faCog, faUsers);
@@ -49,30 +45,6 @@ const App = () => (
       <Footer />
     </div>
   </BrowserRouter>
-  );
+);
 
-{/*
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
-*/}
 export default App;
