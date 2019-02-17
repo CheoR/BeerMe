@@ -2,7 +2,7 @@ import React from 'react';
 
 import { shallow } from '../../enzyme';
 
-import UserPage from '../UserPage';
+import UserPage from './UserPage';
 
 describe('<UserPage />', () => {
   const user = "BuddyBeer";

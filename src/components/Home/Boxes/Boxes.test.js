@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { shallow } from '../../enzyme';
+import { shallow } from '../../../enzyme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Boxes from '../Boxes';
+import Boxes from './Boxes';
 
 describe('<Boxes />', () => {
   const wrapper = shallow(<Boxes />);

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount, shallow, render } from '../../enzyme';
 
-import Users from '../Users';
+import Users from './Users';
 
 
 
