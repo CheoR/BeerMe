@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Boxes from './Boxes';
-import Info from './Info';
-import Portfolio from './Portfolio';
-import ShowCase from './ShowCase';
+import Boxes from './Boxes/Boxes';
+import Info from './Info/Info';
+import Portfolio from './Portfolio/Portfolio';
+import ShowCase from './ShowCase/ShowCase';
 
 const Home = () => (
     <div className="page-home">

@@ -1,5 +1,5 @@
 import React from 'react';
-import drunk from '../img/drunk.jpeg';
+import drunk from '../../../img/drunk.jpeg';
 
 const Info = () => (
     <section className="info">
