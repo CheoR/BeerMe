@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { shallow } from '../../enzyme';
+import { shallow } from '../../../enzyme';
 
-import Info from '../Info';
-import drunkImg from "../../img/drunk.jpeg";
+import Info from './Info';
+import drunkImg from "../../../img/drunk.jpeg";
 
 describe("<Info />", () => {
   const wrapper = shallow(<Info />);
