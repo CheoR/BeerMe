@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-import Footer from '../Footer';
+import Footer from './Footer';
 library.add(fab);
 
 describe('<Footer />', () => {

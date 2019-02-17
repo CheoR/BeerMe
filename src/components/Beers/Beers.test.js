@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount, shallow, render } from '../../enzyme';
 
-import Beers from '../Beers';
+import Beers from './Beers';
 
 // const beerList = [
 //     {

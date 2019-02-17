@@ -2,7 +2,7 @@ import React from 'react';
 
 import { shallow, render } from '../../enzyme';
 
-import Home from '../Home';
+import Home from './Home';
 
 describe('<Home /> ', () => {
   const wrapper = shallow(<Home />);
@@ -11,7 +11,7 @@ describe('<Home /> ', () => {
 
 
   it('should have container class', () => {
-    expect(wrapper.find('.container').exists()).toEqual(true);
+    expect(wrapper.find('.page-home').exists()).toEqual(true);
   });
 
   it('should have 4 components', () => {
