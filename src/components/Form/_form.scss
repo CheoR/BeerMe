@@ -1,0 +1,31 @@
+// SIGN-UP PAGE
+.sign-up-form {
+  background: $default-primary;
+  width:      90%;
+  margin:     auto;
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
+  display:    grid;
+  
+  label,
+  .input-field {
+    width:   90%;
+    margin:  auto;
+    display: block;
+  }
+
+  .input-field {
+    box-shadow: $default-shadow;
+  }
+
+  h1 {
+    background: darken($default-light, 15);
+    box-shadow: $default-shadow;
+    padding:   .5em;
+    text-align: center;
+  }
+}
+
+.policy {
+  font-size: .5em;
+}

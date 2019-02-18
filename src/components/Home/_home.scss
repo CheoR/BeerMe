@@ -1,0 +1,10 @@
+@import './ShowCase/showCase';
+@import './Boxes/boxes';
+@import './Info/info';
+@import './Portfolio/portfolio';
+
+// HOME PAGE
+.page-home {
+  display:   grid;
+  grid-gap: .5em; // 10px
+}

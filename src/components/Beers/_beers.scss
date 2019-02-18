@@ -1,0 +1,16 @@
+// BEERS PAGE
+// USERS PAGE
+@import '../Card/card';
+
+.main {
+  text-align: center;
+
+  header {
+    text-transform: uppercase;
+  }
+
+  section {
+    display:  grid;
+    grid-gap: 1em;
+  }
+}

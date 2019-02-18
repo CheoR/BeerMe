@@ -1,0 +1,10 @@
+
+// PAGENOTFOUND
+// ERROR
+.main-error,
+.not-found {
+  margin:     auto;
+  font-size:  2em;
+  box-shadow: $default-shadow;
+  background: rgba($default-primary, .5);
+}

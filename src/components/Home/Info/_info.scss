@@ -1,0 +1,29 @@
+// INFO
+.info {
+  display:    grid;
+  grid-gap:   1.5em;  // 30px
+
+  background: $default-light;
+  box-shadow: $default-shadow;
+  padding:    $default-padding;
+
+  img {
+    box-shadow: 0px 3px 3px 2px $default-primary;
+  }
+
+  .info__container {
+    display:        flex;
+    flex-direction: column;
+    box-shadow:     $default-shadow;
+    padding:        $default-padding;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-indent: 10%;
+    padding:     1em;
+  }
+}

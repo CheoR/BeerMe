@@ -1,0 +1,21 @@
+// BOXES
+.boxes {
+  display:               grid;
+  grid-gap:             .5em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: $default-light;
+  text-align: center;
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
+
+  h3 {
+    margin-top: 1em;
+  }
+
+  p {
+    margin-top: 1em;
+  }
+}

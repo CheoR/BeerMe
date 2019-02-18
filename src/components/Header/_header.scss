@@ -1,0 +1,32 @@
+.header {
+  span {
+    font-size:   3.2em; // 64px;
+    font-weight: bold;
+  }
+
+  .beer-icon {
+    font-size: 3em; // 60px
+  }
+
+  &__nav {
+    text-align:     center;
+    text-transform: uppercase;
+    li {
+      padding: $default-padding;
+      border-bottom: .05em solid black;  // 1px
+
+      &:first-child {
+        border-top: .1em solid black; // 2px
+      }
+    }
+
+    .nav-link {
+      width: 100%;
+      display: inline-block;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

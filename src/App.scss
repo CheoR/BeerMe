@@ -10,9 +10,8 @@
 
 /*
   TODO: 
-  8. Refactor.
-  9. Modularize.
   10. Beers/users pages cards look at differnt heights because of shading.
+  11. Refactor Users/Beers into containers/presentatinal and scss.
 */
 
 // COLORS
@@ -43,6 +42,16 @@ $default-img-width: 100%;
 $between-500-and-700: 500px;
 $between-700-and-up:  700px;
 
+@import 'components/Header/header';
+@import 'components/Footer/footer';
+@import 'components/PageNotFound/pageNotFound';
+
+@import 'components/About/about';
+@import 'components/Home/home';
+@import 'components/UserPage/userPage';
+@import 'components/Form/form';
+@import 'components/Beers/beers';
+@import 'components/Users/users';
 
 body {
   background:  $default-background-color;
@@ -62,7 +71,6 @@ button,
   margin:     auto;
 }
 
-
 // APP
 .App {
   width:           100%;
@@ -71,288 +79,6 @@ button,
   flex-direction:  column;
   justify-content: space-between;
 }
-
-.header {
-  span {
-    font-size:   3.2em; // 64px;
-    font-weight: bold;
-  }
-
-  .beer-icon {
-    font-size: 3em; // 60px
-  }
-
-  &__nav {
-    text-align:     center;
-    text-transform: uppercase;
-    li {
-      padding: $default-padding;
-      border-bottom: .05em solid black;  // 1px
-
-      &:first-child {
-        border-top: .1em solid black; // 2px
-      }
-    }
-
-    .nav-link {
-      width: 100%;
-      display: inline-block;
-
-      &:hover {
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.footer {
-  background: $default-dark;
-  margin-top: 1.6em;  // 32px
-  text-align: center;
-  a {
-    display: inline-block;
-    color:   $default-primary;
-    padding: .33em;  // ~5.28px
-  }
-}
-
-
-// PAGENOTFOUND
-// ERROR
-.main-error,
-.not-found {
-  margin:     auto;
-  font-size:  2em;
-  box-shadow: $default-shadow;
-  background: rgba($default-primary, .5);
-}
-
-
-// HOME PAGE
-.page-home {
-  display:   grid;
-  grid-gap: .5em; // 10px
-}
-
-.top-container {
-  display:   grid;
-  grid-gap: .5em;
-  grid-template-areas:
-    'showCase'
-    'top-box-a'
-    'top-box-b';
-}
-
-.showCase {
-
-  grid-area:             showCase;
-  display:               flex;
-  flex-direction:        column;
-
-  min-height:            5em; // 100px;
-  padding:               1em;
-
-  background:            url(./img/beer.jpeg);
-  background-size:       cover;
-  background-position:   center;
-
-  background-color:      rgba($default-light, .7);
-  background-blend-mode: difference;
-  color:                 saturate($default-dark, 50);
-}
-
-.top-box {
-  display:       grid;
-  align-items:   center;
-  justify-items: center;
-  background:    $default-background-color;
-  box-shadow:    $default-shadow;
-  padding:      .4em;
-}
-
-.top-box-a {
-  grid-area: top-box-a;
-}
-
-.top-box-b {
-  grid-area: top-box-b;
-}
-
-
-// BOXES
-.boxes {
-  display:               grid;
-  grid-gap:             .5em;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.box {
-  background: $default-light;
-  text-align: center;
-  padding:    $default-padding;
-  box-shadow: $default-shadow;
-
-  h3 {
-    margin-top: 1em;
-  }
-
-  p {
-    margin-top: 1em;
-  }
-}
-
-
-// INFO
-.info {
-  display:    grid;
-  grid-gap:   1.5em;  // 30px
-
-  background: $default-light;
-  box-shadow: $default-shadow;
-  padding:    $default-padding;
-
-  img {
-    box-shadow: 0px 3px 3px 2px $default-primary;
-  }
-
-  .info__container {
-    display:        flex;
-    flex-direction: column;
-    box-shadow:     $default-shadow;
-    padding:        $default-padding;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  p {
-    text-indent: 10%;
-    padding:     1em;
-  }
-}
-
-// PORTFOLIO
-.portfolio {
-  display:               grid;
-  grid-gap:              1em;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  img {
-    box-shadow: 0px 2px 2px 2px $default-primary;
-  }
-}
-
-
-// ABOUT PAGE
-.about {
-  padding:      $default-padding;
-  box-shadow:   $default-shadow;
-
-  header {
-    text-align:     center;
-    text-transform: uppercase;
-  }
-
-  p {
-    text-indent:   10%;
-    margin-bottom: 1em;
-  }
-}
-
-
-// BEERS PAGE
-// USERS PAGE
-.main {
-  text-align: center;
-
-  header {
-    text-transform: uppercase;
-  }
-
-  section {
-    display:  grid;
-    grid-gap: 1em;
-  }
-}
-
-.card {
-  width:           90%;
-  height: 350px;
-  margin:          auto;
-  display:         flex;
-  flex-direction:  column;
-  justify-content: space-between;
-  box-shadow:      $default-shadow;
-  padding:        .5em;
-
-  &:nth-child(odd) {
-    background: $default-primary;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
-  }
-
-  img {
-    width:      80%;
-    margin:     auto;
-    box-shadow: $default-shadow;
-  }
-
-  &__content {
-    font-size: 80%;
-  }
-}
-
-
-// SIGN-UP PAGE
-.sign-up-form {
-  background: $default-primary;
-  width:      90%;
-  margin:     auto;
-  padding:    $default-padding;
-  box-shadow: $default-shadow;
-  display:    grid;
-  
-  label,
-  .input-field {
-    width:   90%;
-    margin:  auto;
-    display: block;
-  }
-
-  .input-field {
-    box-shadow: $default-shadow;
-  }
-
-  h1 {
-    background: darken($default-light, 15);
-    box-shadow: $default-shadow;
-    padding:   .5em;
-    text-align: center;
-  }
-}
-
-.policy {
-  font-size: .5em;
-}
-
-
-// USER PAGE
-.page-user,
-.page-featured {
-  padding:    $default-padding;
-  box-shadow: $default-shadow;
-  margin:     auto;
-
-  h1 {
-    font-size: 2em;
-  }
-
-  p {
-    text-indent: 10%;
-    margin-top:  1em;
-  }
-} 
-
 
 
 // MEDIA QUERIES

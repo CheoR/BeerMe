@@ -1,0 +1,43 @@
+
+.top-container {
+  display:   grid;
+  grid-gap: .5em;
+  grid-template-areas:
+    'showCase'
+    'top-box-a'
+    'top-box-b';
+}
+
+.showCase {
+  grid-area:             showCase;
+  display:               flex;
+  flex-direction:        column;
+
+  min-height:            5em; // 100px;
+  padding:               1em;
+
+  background:            url(./img/beer.jpeg);
+  background-size:       cover;
+  background-position:   center;
+
+  background-color:      rgba($default-light, .7);
+  background-blend-mode: difference;
+  color:                 saturate($default-dark, 50);
+}
+
+.top-box {
+  display:       grid;
+  align-items:   center;
+  justify-items: center;
+  background:    $default-background-color;
+  box-shadow:    $default-shadow;
+  padding:      .4em;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}

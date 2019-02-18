@@ -1,0 +1,15 @@
+// ABOUT PAGE
+.about {
+  padding:      $default-padding;
+  box-shadow:   $default-shadow;
+
+  header {
+    text-align:     center;
+    text-transform: uppercase;
+  }
+
+  p {
+    text-indent:   10%;
+    margin-bottom: 1em;
+  }
+}

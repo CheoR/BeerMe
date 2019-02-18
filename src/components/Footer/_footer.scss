@@ -1,0 +1,10 @@
+.footer {
+  background: $default-dark;
+  margin-top: 1.6em;  // 32px
+  text-align: center;
+  a {
+    display: inline-block;
+    color:   $default-primary;
+    padding: .33em;  // ~5.28px
+  }
+}
