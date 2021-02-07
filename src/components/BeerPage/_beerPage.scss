@@ -1,0 +1,15 @@
+// USER PAGE
+.page-beer {
+  padding:    $default-padding;
+  box-shadow: $default-shadow;
+  margin:     auto;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    text-indent: 10%;
+    margin-top:  1em;
+  }
+}

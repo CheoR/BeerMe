@@ -12,6 +12,7 @@ import logo from './img/logo.svg';
 import './App.scss';
 
 import About        from "./components/About/About";
+import BeerPage     from "./components/BeerPage/BeerPage";
 import Beers        from "./components/Beers/Beers";
 import Featured     from './components/Featured/Featured';
 import Footer       from "./components/Footer/Footer";
@@ -34,6 +35,7 @@ const App = () => (
       <Switch>
         <Route path="/about"       component={About} />
         <Route exact path="/beers" component={Beers} />
+        <Route path="/beer/:name"  component={BeerPage} />
         <Route path="/beers/:name" component={Featured} />
         <Route path="/SignUp"      component={CustomForm} />
         <Route exact path="/users" component={Users} />
