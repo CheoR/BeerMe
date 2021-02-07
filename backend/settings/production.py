@@ -177,7 +177,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 # and have a url
 # localhost:3000/ React's default local port
 CORS_ORIGIN_WHITELIST = (
-    'beermeanother.herokuapp.com'
+    'https://beermeanother.herokuapp.com'
 )
 
 # at the bottom of your file

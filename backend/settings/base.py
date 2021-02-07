@@ -183,7 +183,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 # and have a url
 # localhost:3000/ React's default local port
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8000'
+    'https://localhost:8000',
 )
 
 print("=" * 20)
